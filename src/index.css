@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-950 text-white font-sans min-h-screen;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed;
+  }
+
+  a {
+    @apply text-primary-400 hover:text-primary-300 transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md transition-all duration-300 font-medium text-base;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-accent-600 hover:bg-accent-700 text-white;
+  }
+
+  .btn-outline {
+    @apply border border-white hover:bg-white hover:text-dark-950;
+  }
+
+  .btn-gold {
+    @apply bg-gold-600 hover:bg-gold-700 text-dark-950;
+  }
+
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .card {
+    @apply bg-dark-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-[1.02];
+  }
+
+  .input {
+    @apply w-full px-4 py-2 bg-dark-800 border border-dark-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+
+  .artwork-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
+}
