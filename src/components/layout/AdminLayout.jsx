@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import Header from '../common/Header';
+import NavigationPopup from '../common/NavigationPopup';
 
 const AdminLayout = ({ children }) => {
   const { pathname } = useLocation();
@@ -22,13 +22,13 @@ const AdminLayout = ({ children }) => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow pt-20 bg-dark-950">
+      <NavigationPopup />
+      <main className="flex-grow bg-amber-900">
         <div className="container-custom py-8">
           {children}
         </div>
       </main>
-      <div className="bg-dark-900 py-4 text-center text-gray-500">
+      <div className="bg-amber-800 py-4 text-center text-gray-500">
         <p>© {new Date().getFullYear()} Artist Portfolio Admin. All rights reserved.</p>
       </div>
     </div>

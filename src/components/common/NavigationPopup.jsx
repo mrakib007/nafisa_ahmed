@@ -87,8 +87,8 @@ const NavigationPopup = () => {
         onClick={() => setIsOpen(true)}
         className="fixed top-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white hover:shadow-xl transition-all duration-300"
         style={{
-          background: 'linear-gradient(135deg, #0b2a2b 0%, #1a4a4b 50%, #2a6a6b 100%)',
-          boxShadow: '0 4px 15px rgba(11, 42, 43, 0.3)'
+          background: 'black',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)'
         }}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}

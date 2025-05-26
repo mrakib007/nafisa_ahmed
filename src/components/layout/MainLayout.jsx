@@ -18,8 +18,7 @@ const MainLayout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <NavigationPopup />
-      <Header />
-      <main className={`flex-grow ${isHomePage ? '' : 'pt-20'}`}>
+      <main className="flex-grow">
         {children}
       </main>
       <Footer />
