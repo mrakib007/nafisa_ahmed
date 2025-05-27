@@ -53,29 +53,29 @@ const AboutPage = () => {
               <SlideIn direction="right">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">About the Artist</h1>
                 <p className="text-xl text-gray-300 mb-6">
-                  With a passion deeply rooted in fine arts and a professional journey spanning imaginative digital illustration, 
+                  With a passion deeply rooted in fine arts and a professional journey spanning imaginative digital illustration,
                   dynamic concept art, and compelling storytelling.
                 </p>
                 <p className="text-gray-400 mb-8">
-                  I transform ideas into vivid visual worlds — growing from strong local roots to a thriving global reach, 
+                  I transform ideas into vivid visual worlds — growing from strong local roots to a thriving global reach,
                   currently bringing creative visions to life as a Concept Illustrator.
                 </p>
               </SlideIn>
             </div>
-            
+
             <ParallaxEffect speed={0.1} className="rounded-lg overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1536924430914-91f9e2041b83?q=80&w=1966&auto=format&fit=crop" 
-                alt="Artist portrait" 
+              <img
+                src="https://images.unsplash.com/photo-1536924430914-91f9e2041b83?q=80&w=1966&auto=format&fit=crop"
+                alt="Artist portrait"
                 className="w-full h-auto rounded-lg"
               />
             </ParallaxEffect>
           </div>
         </div>
       </section>
-      
+
       {/* Skills Section */}
-      <section className="py-20 bg-dark-900">
+      <section className="py-20 bg-primary-400">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Skills & Expertise</h2>
@@ -84,7 +84,7 @@ const AboutPage = () => {
               that allows me to bring any creative vision to life.
             </p>
           </FadeIn>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {skills.map((skill, index) => (
               <SlideIn key={skill.name} direction="up" delay={index * 0.1}>
@@ -108,32 +108,32 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Philosophy Section */}
       <section className="py-20 bg-gradient-to-b from-dark-900 to-dark-950">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ParallaxEffect speed={0.1} className="rounded-lg overflow-hidden order-2 lg:order-1">
-              <img 
-                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071&auto=format&fit=crop" 
-                alt="Artist at work" 
+              <img
+                src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=2071&auto=format&fit=crop"
+                alt="Artist at work"
                 className="w-full h-auto rounded-lg"
               />
             </ParallaxEffect>
-            
+
             <div className="order-1 lg:order-2">
               <SlideIn direction="left">
                 <h2 className="text-3xl font-bold mb-6">My Creative Philosophy</h2>
                 <p className="text-gray-300 mb-6">
-                  I believe that art is a powerful medium for storytelling and emotional connection. Every piece I create 
+                  I believe that art is a powerful medium for storytelling and emotional connection. Every piece I create
                   is designed to evoke feeling and transport the viewer to another world.
                 </p>
                 <p className="text-gray-300 mb-6">
-                  My approach combines technical precision with imaginative exploration, blending traditional artistic 
+                  My approach combines technical precision with imaginative exploration, blending traditional artistic
                   principles with cutting-edge digital techniques to create visuals that are both innovative and timeless.
                 </p>
                 <p className="text-gray-300">
-                  Whether I'm designing characters, environments, or illustrations, I strive to infuse each piece with 
+                  Whether I'm designing characters, environments, or illustrations, I strive to infuse each piece with
                   narrative depth and visual richness that invites viewers to linger and discover new details with each viewing.
                 </p>
               </SlideIn>
@@ -141,9 +141,9 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Experience Timeline */}
-      <section className="py-20 bg-dark-950">
+      <section className="py-20 bg-primary-400">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Professional Journey</h2>
@@ -151,7 +151,7 @@ const AboutPage = () => {
               My career path has been shaped by diverse experiences that have contributed to my growth as an artist.
             </p>
           </FadeIn>
-          
+
           <div className="max-w-4xl mx-auto">
             {timeline.map((item, index) => (
               <SlideIn key={index} direction={index % 2 === 0 ? 'left' : 'right'} delay={index * 0.1}>
@@ -167,9 +167,9 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Call to Action */}
-      <section className="py-20 bg-primary-900">
+      <section className="py-20 bg-primary-400">
         <div className="container-custom text-center">
           <FadeIn>
             <h2 className="text-4xl font-bold mb-6">Let's Create Something Amazing</h2>

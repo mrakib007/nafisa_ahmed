@@ -74,9 +74,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-dark-900 pt-16 pb-8">
+    <footer className="bg-primary-400 pt-16 pb-8">
       <div className="container-custom">
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
           variants={containerVariants}
           initial="hidden"
@@ -85,24 +85,25 @@ const Footer = () => {
         >
           {/* Logo and Description */}
           <motion.div variants={itemVariants}>
-            <Link to="/" className="text-3xl font-serif font-bold text-white mb-4 inline-block">
+            <Link to="/" className="text-3xl font-serif font-bold mb-4 inline-block" style={{color: '#0b2a2b'}}>
               Artist<span className="text-primary-400">Portfolio</span>
             </Link>
-            <p className="text-gray-400 mt-4 max-w-md">
-              With a passion deeply rooted in fine arts and a professional journey spanning imaginative digital illustration, 
+            <p className="mt-4 max-w-md" style={{color: '#0b2a2b'}}>
+              With a passion deeply rooted in fine arts and a professional journey spanning imaginative digital illustration,
               dynamic concept art, and compelling storytelling, I transform ideas into vivid visual worlds.
             </p>
           </motion.div>
 
           {/* Quick Links */}
           <motion.div variants={itemVariants} className="md:mx-auto">
-            <h3 className="text-xl font-semibold text-white mb-4">Quick Links</h3>
+            <h3 className="text-xl font-semibold mb-4" style={{color: '#0b2a2b'}}>Quick Links</h3>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.path}>
-                  <Link 
+                  <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                    className="hover:text-primary-400 transition-colors duration-300"
+                    style={{color: '#0b2a2b'}}
                   >
                     {link.name}
                   </Link>
@@ -113,20 +114,21 @@ const Footer = () => {
 
           {/* Contact Info */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-xl font-semibold text-white mb-4">Connect</h3>
-            <p className="text-gray-400 mb-4">
+            <h3 className="text-xl font-semibold mb-4" style={{color: '#0b2a2b'}}>Connect</h3>
+            <p className="mb-4" style={{color: '#0b2a2b'}}>
               Email: <a href="mailto:contact@artistportfolio.com" className="text-primary-400 hover:text-primary-300">contact@artistportfolio.com</a>
             </p>
-            
+
             {/* Social Media */}
             <div className="flex space-x-4 mt-6">
               {socialLinks.map((social) => (
-                <a 
+                <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-primary-400 transition-colors duration-300"
+                  className="hover:text-primary-400 transition-colors duration-300"
+                  style={{color: '#0b2a2b'}}
                   aria-label={social.name}
                 >
                   <SocialIcon icon={social.icon} />
@@ -137,8 +139,9 @@ const Footer = () => {
         </motion.div>
 
         {/* Copyright */}
-        <motion.div 
-          className="border-t border-dark-700 pt-8 text-center text-gray-500"
+        <motion.div
+          className="border-t border-dark-700 pt-8 text-center"
+          style={{color: '#0b2a2b'}}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.5 }}

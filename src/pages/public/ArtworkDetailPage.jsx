@@ -59,15 +59,15 @@ const ArtworkDetailPage = () => {
   useEffect(() => {
     const fetchArtwork = async () => {
       setIsLoading(true);
-      
+
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 500));
-      
+
       const foundArtwork = artworksData.find(art => art.id === id);
-      
+
       if (foundArtwork) {
         setArtwork(foundArtwork);
-        
+
         // Get related artworks
         if (foundArtwork.relatedWorks && foundArtwork.relatedWorks.length > 0) {
           const related = artworksData
@@ -79,7 +79,7 @@ const ArtworkDetailPage = () => {
         // Artwork not found, redirect to 404
         navigate('/not-found');
       }
-      
+
       setIsLoading(false);
     };
 
@@ -113,7 +113,7 @@ const ArtworkDetailPage = () => {
               Back to Portfolio
             </Link>
           </div>
-          
+
           <FadeIn>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{artwork.title}</h1>
             <p className="text-xl text-gray-400 mb-8 max-w-3xl">
@@ -122,52 +122,52 @@ const ArtworkDetailPage = () => {
           </FadeIn>
         </div>
       </section>
-      
+
       {/* Artwork Image */}
       <section className="py-10">
         <div className="container-custom">
           <SlideIn direction="up">
             <div className="rounded-lg overflow-hidden">
-              <img 
-                src={artwork.image} 
-                alt={artwork.title} 
+              <img
+                src={artwork.image}
+                alt={artwork.title}
                 className="w-full h-auto"
               />
             </div>
           </SlideIn>
         </div>
       </section>
-      
+
       {/* Artwork Details */}
       <section className="py-10">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Metadata */}
             <SlideIn direction="right">
-              <div className="bg-dark-800 rounded-lg p-6">
+              <div className="bg-secondary-600 rounded-lg p-6">
                 <h2 className="text-2xl font-bold mb-6">Details</h2>
-                
+
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-gray-400 text-sm">Category</h3>
                     <p className="font-medium">
-                      {artwork.category.split('-').map(word => 
+                      {artwork.category.split('-').map(word =>
                         word.charAt(0).toUpperCase() + word.slice(1)
                       ).join(' ')}
                     </p>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-gray-400 text-sm">Date</h3>
                     <p className="font-medium">{artwork.date}</p>
                   </div>
-                  
+
                   <div>
                     <h3 className="text-gray-400 text-sm">Tools Used</h3>
                     <div className="flex flex-wrap gap-2 mt-1">
                       {artwork.tools.map(tool => (
-                        <span 
-                          key={tool} 
+                        <span
+                          key={tool}
                           className="inline-block bg-dark-700 text-primary-400 px-3 py-1 rounded-full text-sm"
                         >
                           {tool}
@@ -175,7 +175,7 @@ const ArtworkDetailPage = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   {artwork.featured && (
                     <div className="pt-2">
                       <span className="inline-block bg-gold-900/30 text-gold-400 border border-gold-500 px-3 py-1 rounded-full text-sm">
@@ -186,10 +186,10 @@ const ArtworkDetailPage = () => {
                 </div>
               </div>
             </SlideIn>
-            
+
             {/* Story */}
             <SlideIn direction="up" className="lg:col-span-2">
-              <div className="bg-dark-800 rounded-lg p-6">
+              <div className="bg-secondary-600 rounded-lg p-6">
                 <h2 className="text-2xl font-bold mb-6">The Story</h2>
                 <div className="prose prose-invert max-w-none">
                   {artwork.story.split('\n\n').map((paragraph, index) => (
@@ -203,15 +203,15 @@ const ArtworkDetailPage = () => {
           </div>
         </div>
       </section>
-      
+
       {/* Related Works */}
       {relatedArtworks.length > 0 && (
-        <section className="py-16 bg-dark-900">
+        <section className="py-16 bg-primary-400">
           <div className="container-custom">
             <FadeIn className="mb-10">
               <h2 className="text-3xl font-bold">Related Works</h2>
             </FadeIn>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedArtworks.map((relatedArt, index) => (
                 <SlideIn key={relatedArt.id} direction="up" delay={index * 0.1} className="group">

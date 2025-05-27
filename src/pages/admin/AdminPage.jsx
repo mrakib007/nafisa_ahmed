@@ -50,7 +50,7 @@ const AdminPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-dark-800 rounded-lg shadow-xl p-8"
+            className="bg-secondary-600 rounded-lg shadow-xl p-8"
           >
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold mb-2">Admin Login</h1>

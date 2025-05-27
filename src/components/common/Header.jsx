@@ -22,13 +22,13 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-        isScrolled ? 'bg-amber-800/90 backdrop-blur-md py-3' : 'bg-transparent py-5'
+        isScrolled ? 'bg-primary-400/90 backdrop-blur-md py-3' : 'bg-transparent py-5'
       } ${isHomePage ? 'hidden' : ''}`}
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo - only show on non-home pages */}
         {!isHomePage && (
-          <Link to="/" className="text-2xl font-serif font-bold text-white">
+          <Link to="/" className="text-2xl font-serif font-bold" style={{color: '#0b2a2b'}}>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}

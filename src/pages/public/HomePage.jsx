@@ -67,7 +67,7 @@ const HomePage = () => {
       </section>
 
       {/* Featured Works Section */}
-      <section className="py-20 bg-dark-900">
+      <section className="py-20 bg-primary-400">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Featured Works</h2>
@@ -176,7 +176,7 @@ const HomePage = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-gradient-to-b from-dark-950 to-dark-900">
+      <section className="py-20 bg-primary-400">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <ParallaxEffect speed={0.1} className="rounded-lg overflow-hidden">

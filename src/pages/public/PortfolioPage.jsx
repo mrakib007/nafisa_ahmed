@@ -159,8 +159,8 @@ const PortfolioPage = () => {
                 onClick={() => handleCategoryChange(category.value)}
                 className={`px-4 py-2 rounded-full transition-colors ${
                   activeCategory === category.value
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-dark-800 text-gray-300 hover:bg-dark-700'
+                    ? 'bg-secondary-800 text-white'
+                    : 'bg-secondary-600 text-gray-300 hover:bg-secondary-700'
                 }`}
               >
                 {category.label}

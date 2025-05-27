@@ -7,20 +7,35 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Warm, artistic color palette based on #f6d0a8
+        // Primary color palette based on #f6d0a8
         primary: {
-          50: '#fefbf6',
-          100: '#fdf6ed',
-          200: '#fbebd2',
-          300: '#f8ddb7',
-          400: '#f6d0a8', // Main color from your palette
-          500: '#f3c299',
-          600: '#f0b48a',
-          700: '#eda67b',
-          800: '#ea986c',
-          900: '#e78a5d',
-          950: '#e47c4e',
+          50: '#fefcf9',
+          100: '#fdf8f1',
+          200: '#fbf0e3',
+          300: '#f8e7d4',
+          400: '#f6d0a8', // Main color #f6d0a8
+          500: '#f4c794',
+          600: '#f2be80',
+          700: '#f0b56c',
+          800: '#eeac58',
+          900: '#eca344',
+          950: '#ea9a30',
         },
+        // Secondary color palette (slightly darker variants)
+        secondary: {
+          50: '#faf7f2',
+          100: '#f5efe5',
+          200: '#ebdfcb',
+          300: '#e1cfb1',
+          400: '#d7bf97',
+          500: '#cdaf7d',
+          600: '#c39f63',
+          700: '#b98f49',
+          800: '#af7f2f',
+          900: '#a56f15',
+          950: '#8b5f12',
+        },
+        // Accent color palette (warmer variants)
         accent: {
           50: '#fdf9f4',
           100: '#fbf3e9',
@@ -34,31 +49,25 @@ export default {
           900: '#db9339',
           950: '#d78723',
         },
-        warm: {
-          50: '#fefcfa',
-          100: '#fdf9f5',
-          200: '#fbf3eb',
-          300: '#f9ede1',
-          400: '#f7e7d7',
-          500: '#f5e1cd',
-          600: '#f3dbc3',
-          700: '#f1d5b9',
-          800: '#efcfaf',
-          900: '#edc9a5',
-          950: '#ebc39b',
-        },
+        // Dark variants for backgrounds
         dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-          950: '#020617',
+          50: '#f9f7f4',
+          100: '#f3efe8',
+          200: '#e7dfd1',
+          300: '#dbcfba',
+          400: '#cfbfa3',
+          500: '#c3af8c',
+          600: '#b79f75',
+          700: '#ab8f5e',
+          800: '#9f7f47',
+          900: '#936f30',
+          950: '#7a5c28',
+        },
+        // Text color based on #0b2a2b
+        textColor: {
+          primary: '#0b2a2b',
+          light: '#1a4a4b',
+          lighter: '#2a6a6b',
         },
         // Artistic gold accent
         gold: {

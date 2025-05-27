@@ -70,11 +70,11 @@ const ContactPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {contactInfo.map((item, index) => (
               <SlideIn key={item.title} direction="up" delay={index * 0.1}>
-                <a 
-                  href={item.link} 
-                  target="_blank" 
+                <a
+                  href={item.link}
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-dark-800 rounded-lg p-6 text-center hover:bg-dark-700 transition-colors"
+                  className="block bg-primary-700 rounded-lg p-6 text-center hover:bg-primary-800 transition-colors"
                 >
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-900 text-primary-400 mb-4">
                     <IconComponent icon={item.icon} />
@@ -88,14 +88,14 @@ const ContactPage = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <SlideIn direction="right">
-              <div className="bg-dark-800 rounded-lg p-8">
+              <div className="bg-primary-700 rounded-lg p-8">
                 <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
                 <ContactForm />
               </div>
             </SlideIn>
 
             <SlideIn direction="left">
-              <div className="bg-dark-800 rounded-lg overflow-hidden h-full">
+              <div className="bg-primary-700 rounded-lg overflow-hidden h-full">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.11976397304903!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1620293533561!5m2!1sen!2s"
                   className="w-full h-full min-h-[400px]"
@@ -111,7 +111,7 @@ const ContactPage = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-dark-900">
+      <section className="py-20 bg-primary-400">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
@@ -126,8 +126,8 @@ const ContactPage = () => {
                 <div className="bg-dark-800 rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-3">What is your typical process for working with new clients?</h3>
                   <p className="text-gray-400">
-                    My process typically begins with an initial consultation to understand your vision and requirements. 
-                    I then create concept sketches, refine based on your feedback, and deliver the final artwork in your 
+                    My process typically begins with an initial consultation to understand your vision and requirements.
+                    I then create concept sketches, refine based on your feedback, and deliver the final artwork in your
                     preferred format.
                   </p>
                 </div>
@@ -135,8 +135,8 @@ const ContactPage = () => {
                 <div className="bg-dark-800 rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-3">How long does a typical project take to complete?</h3>
                   <p className="text-gray-400">
-                    Project timelines vary depending on complexity and scope. A single illustration might take 1-2 weeks, 
-                    while a comprehensive concept art package could take several months. I'll provide a detailed timeline 
+                    Project timelines vary depending on complexity and scope. A single illustration might take 1-2 weeks,
+                    while a comprehensive concept art package could take several months. I'll provide a detailed timeline
                     during our initial discussion.
                   </p>
                 </div>
@@ -144,15 +144,15 @@ const ContactPage = () => {
                 <div className="bg-dark-800 rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-3">Do you take on commission work?</h3>
                   <p className="text-gray-400">
-                    Yes, I regularly accept commission work for both personal and commercial projects. Please reach out 
+                    Yes, I regularly accept commission work for both personal and commercial projects. Please reach out
                     through the contact form with details about your project, and I'll get back to you to discuss possibilities.
                   </p>
                 </div>
 
-                <div className="bg-dark-800 rounded-lg p-6">
+                <div className="bg-primary-700 rounded-lg p-6">
                   <h3 className="text-xl font-bold mb-3">What file formats do you deliver?</h3>
                   <p className="text-gray-400">
-                    I typically deliver artwork in high-resolution digital formats including PSD, PNG, JPEG, and PDF. 
+                    I typically deliver artwork in high-resolution digital formats including PSD, PNG, JPEG, and PDF.
                     For print projects, I ensure all files meet professional print standards with appropriate resolution and color profiles.
                   </p>
                 </div>

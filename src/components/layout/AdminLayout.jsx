@@ -23,12 +23,12 @@ const AdminLayout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <NavigationPopup />
-      <main className="flex-grow bg-amber-900">
+      <main className="flex-grow bg-primary-400">
         <div className="container-custom py-8">
           {children}
         </div>
       </main>
-      <div className="bg-amber-800 py-4 text-center text-gray-500">
+      <div className="bg-primary-400 py-4 text-center text-gray-500">
         <p>© {new Date().getFullYear()} Artist Portfolio Admin. All rights reserved.</p>
       </div>
     </div>
