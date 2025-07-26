@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MainLayout from '../../components/layout/MainLayout';
 import FadeIn from '../../components/animations/FadeIn';
-import { usePageTitle, PageTitle } from '../../hooks/usePageTitle.jsx';
+import { usePageTitle } from '../../hooks/usePageTitle.jsx';
 
 // Sample artwork data (in a real app, this would come from an API or database)
 const artworksData = [
@@ -142,9 +142,7 @@ const PortfolioPage = () => {
   };
 
   return (
-    <>
-      <PageTitle title="Portfolio" />
-      <MainLayout>
+    <MainLayout>
       <section className="py-20">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
@@ -243,7 +241,6 @@ const PortfolioPage = () => {
         </div>
       </section>
     </MainLayout>
-    </>
   );
 };
 

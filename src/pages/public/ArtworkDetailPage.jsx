@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import MainLayout from '../../components/layout/MainLayout';
 import FadeIn from '../../components/animations/FadeIn';
 import SlideIn from '../../components/animations/SlideIn';
-import { usePageTitle, PageTitle } from '../../hooks/usePageTitle.jsx';
+import { usePageTitle } from '../../hooks/usePageTitle.jsx';
 
 // Sample artwork data (in a real app, this would come from an API or database)
 const artworksData = [
@@ -105,9 +105,7 @@ const ArtworkDetailPage = () => {
   }
 
   return (
-    <>
-      <PageTitle title={artwork?.title || 'Artwork'} />
-      <MainLayout>
+    <MainLayout>
       {/* Hero Section */}
       <section className="pt-20 pb-10">
         <div className="container-custom">
@@ -249,7 +247,6 @@ const ArtworkDetailPage = () => {
         </section>
       )}
     </MainLayout>
-    </>
   );
 };
 
