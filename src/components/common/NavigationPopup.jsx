@@ -85,7 +85,7 @@ const NavigationPopup = () => {
       {/* Stylish Navigation Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed top-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white hover:shadow-xl transition-all duration-300"
+        className="fixed top-6 right-6 z-[9999] w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white hover:shadow-xl transition-all duration-300"
         style={{
           background: 'black',
           boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)'
@@ -112,13 +112,13 @@ const NavigationPopup = () => {
       {/* Navigation Popup */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center"
-            variants={overlayVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
+                      <motion.div
+              className="fixed inset-0 z-[9998] flex items-center justify-center"
+              variants={overlayVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
             {/* Backdrop */}
             <motion.div
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MainLayout from '../../components/layout/MainLayout';
 import FadeIn from '../../components/animations/FadeIn';
+import { usePageTitle, PageTitle } from '../../hooks/usePageTitle.jsx';
 
 // Sample artwork data (in a real app, this would come from an API or database)
 const artworksData = [
@@ -80,6 +81,7 @@ const artworksData = [
 ];
 
 const PortfolioPage = () => {
+  usePageTitle('Portfolio');
   const [artworks, setArtworks] = useState([]);
   const [filteredArtworks, setFilteredArtworks] = useState([]);
   const [activeCategory, setActiveCategory] = useState('all');
@@ -140,7 +142,9 @@ const PortfolioPage = () => {
   };
 
   return (
-    <MainLayout>
+    <>
+      <PageTitle title="Portfolio" />
+      <MainLayout>
       <section className="py-20">
         <div className="container-custom">
           <FadeIn className="text-center mb-16">
@@ -239,6 +243,7 @@ const PortfolioPage = () => {
         </div>
       </section>
     </MainLayout>
+    </>
   );
 };
 

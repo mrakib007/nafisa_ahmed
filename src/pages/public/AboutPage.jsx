@@ -3,8 +3,11 @@ import MainLayout from '../../components/layout/MainLayout';
 import FadeIn from '../../components/animations/FadeIn';
 import SlideIn from '../../components/animations/SlideIn';
 import ParallaxEffect from '../../components/animations/ParallaxEffect';
+import { usePageTitle, PageTitle } from '../../hooks/usePageTitle.jsx';
 
 const AboutPage = () => {
+  usePageTitle('About');
+  
   // Skills data
   const skills = [
     { name: 'Digital Illustration', level: 95 },
@@ -44,7 +47,9 @@ const AboutPage = () => {
   ];
 
   return (
-    <MainLayout>
+    <>
+      <PageTitle title="About" />
+      <MainLayout>
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         <div className="container-custom">
@@ -183,6 +188,7 @@ const AboutPage = () => {
         </div>
       </section>
     </MainLayout>
+    </>
   );
 };
 

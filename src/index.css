@@ -85,6 +85,51 @@
     }
   }
 
+  /* Float animation for about section photo */
+  .animate-float-slow {
+    animation: float-slow 4s ease-in-out infinite;
+  }
+
+  @keyframes float-slow {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  /* Light sweep animations */
+  .animate-light-sweep {
+    animation: light-sweep 6s ease-in-out infinite;
+  }
+
+  .animate-light-sweep-delayed {
+    animation: light-sweep-delayed 8s ease-in-out infinite;
+  }
+
+  @keyframes light-sweep {
+    0%, 100% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes light-sweep-delayed {
+    0%, 100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(100%);
+    }
+  }
+
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 rounded-md transition-all duration-300 font-medium text-base;
   }
@@ -98,7 +143,7 @@
   }
 
   .btn-outline {
-    @apply border border-white hover:bg-white;
+    @apply border border-white hover:bg-white hover:text-primary-800;
     color: #0b2a2b;
   }
 

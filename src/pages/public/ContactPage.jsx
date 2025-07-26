@@ -3,8 +3,11 @@ import MainLayout from '../../components/layout/MainLayout';
 import ContactForm from '../../components/forms/ContactForm';
 import FadeIn from '../../components/animations/FadeIn';
 import SlideIn from '../../components/animations/SlideIn';
+import { usePageTitle, PageTitle } from '../../hooks/usePageTitle.jsx';
 
 const ContactPage = () => {
+  usePageTitle('Contact');
+  
   // Contact information
   const contactInfo = [
     {
@@ -55,7 +58,9 @@ const ContactPage = () => {
   };
 
   return (
-    <MainLayout>
+    <>
+      <PageTitle title="Contact" />
+      <MainLayout>
       {/* Hero Section */}
       <section className="py-20">
         <div className="container-custom">
@@ -162,6 +167,7 @@ const ContactPage = () => {
         </div>
       </section>
     </MainLayout>
+    </>
   );
 };
 

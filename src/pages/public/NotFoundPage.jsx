@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import MainLayout from '../../components/layout/MainLayout';
+import { usePageTitle, PageTitle } from '../../hooks/usePageTitle.jsx';
 
 const NotFoundPage = () => {
+  usePageTitle('Page Not Found');
+  
   return (
-    <MainLayout>
+    <>
+      <PageTitle title="Page Not Found" />
+      <MainLayout>
       <section className="py-20 min-h-[80vh] flex items-center">
         <div className="container-custom text-center">
           <motion.div
@@ -25,6 +30,7 @@ const NotFoundPage = () => {
         </div>
       </section>
     </MainLayout>
+    </>
   );
 };
 

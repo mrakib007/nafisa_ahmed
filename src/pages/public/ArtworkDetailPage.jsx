@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import MainLayout from '../../components/layout/MainLayout';
 import FadeIn from '../../components/animations/FadeIn';
 import SlideIn from '../../components/animations/SlideIn';
+import { usePageTitle, PageTitle } from '../../hooks/usePageTitle.jsx';
 
 // Sample artwork data (in a real app, this would come from an API or database)
 const artworksData = [
@@ -54,6 +55,9 @@ const ArtworkDetailPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [relatedArtworks, setRelatedArtworks] = useState([]);
   const navigate = useNavigate();
+  
+  // Set dynamic page title based on artwork
+  usePageTitle(artwork?.title || 'Artwork');
 
   // Fetch artwork data
   useEffect(() => {
@@ -101,7 +105,9 @@ const ArtworkDetailPage = () => {
   }
 
   return (
-    <MainLayout>
+    <>
+      <PageTitle title={artwork?.title || 'Artwork'} />
+      <MainLayout>
       {/* Hero Section */}
       <section className="pt-20 pb-10">
         <div className="container-custom">
@@ -243,6 +249,7 @@ const ArtworkDetailPage = () => {
         </section>
       )}
     </MainLayout>
+    </>
   );
 };
 
