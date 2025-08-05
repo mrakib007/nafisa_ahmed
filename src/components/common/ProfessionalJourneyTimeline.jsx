@@ -1,7 +1,6 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { FaStar, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 
 const iconStyles = [
   { background: '#f6d0a8', color: '#0b2a2b' }, // Work
@@ -29,44 +28,31 @@ const ProfessionalJourneyTimeline = ({ timeline }) => (
           borderRadius: '16px',
           border: '2px solid rgba(11,42,43,0.1)',
           margin: '0 20px',
-          padding: '20px',
-          transition: 'all 0.3s ease-in-out',
-          cursor: 'pointer'
+          padding: '20px'
         }}
         contentArrowStyle={{ borderRight: '8px solid #0b2a2b' }}
         date={item.year}
         iconStyle={iconStyles[idx % iconStyles.length]}
         icon={getIcon(idx, item.title)}
       >
-        <motion.div
-          whileHover={{ 
-            scale: 1.02,
-            y: -5,
-            transition: { duration: 0.3, ease: "easeOut" }
-          }}
-          whileTap={{ scale: 0.98 }}
-          className="h-full"
-        >
-          <motion.h3 
+        <div className="h-full">
+          <h3 
             className="vertical-timeline-element-title text-xl font-bold mb-2" 
             style={{ color: '#0b2a2b' }}
-            whileHover={{ color: '#0b2a2b' }}
           >
             {item.title}
-          </motion.h3>
-          <motion.h4 
+          </h3>
+          <h4 
             className="vertical-timeline-element-subtitle text-primary-700 font-medium mb-3"
-            whileHover={{ color: '#0b2a2b' }}
           >
             {item.company}
-          </motion.h4>
-          <motion.p 
+          </h4>
+          <p 
             className="text-gray-800 leading-relaxed text-sm"
-            whileHover={{ color: '#0b2a2b' }}
           >
             {item.description}
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
       </VerticalTimelineElement>
     ))}
   </VerticalTimeline>
