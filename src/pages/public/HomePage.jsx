@@ -32,7 +32,7 @@ const HomePage = () => {
         <div className="container mx-auto px-6 h-full flex items-center relative z-10">
           <div className="max-w-6xl w-full">
             {/* Profile section - positioned to match the reference image */}
-            <div className="flex flex-col items-center md:items-start md:ml-16 lg:ml-24 mt-20 md:mt-40">
+            <div className="flex flex-col items-center md:items-start md:ml-16 lg:ml-24 mt-32 md:mt-56">
               {/* Profile image with bouncing animation */}
               <FadeIn delay={0.3}>
                 <div className="w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-white shadow-xl bg-white mb-6 relative z-20 bounce-slow">
