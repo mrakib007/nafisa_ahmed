@@ -5,50 +5,40 @@ const { generateAccessToken, generateRefreshToken, verifyRefreshToken } = requir
 
 const router = express.Router();
 
-// Register
-router.post('/register', async (req, res) => {
+// Initialize admin user (run once)
+const initializeAdmin = async () => {
   try {
-    const { email, password, name } = req.body;
-
-    // Check if user already exists
-    const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ message: 'User already exists with this email' });
+    const adminEmail = process.env.ADMIN_EMAIL;
+    const existingAdmin = await User.findOne({ email: adminEmail });
+    
+    if (!existingAdmin) {
+      const adminUser = new User({
+        email: process.env.ADMIN_EMAIL,
+        password: process.env.ADMIN_PASSWORD,
+        name: process.env.ADMIN_NAME
+      });
+      await adminUser.save();
+      console.log('Admin user created successfully');
     }
-
-    // Create new user
-    const user = new User({ email, password, name });
-    await user.save();
-
-    // Generate tokens
-    const accessToken = generateAccessToken(user._id);
-    const refreshToken = generateRefreshToken(user._id);
-
-    // Save refresh token to user
-    user.refreshTokens.push({ token: refreshToken });
-    await user.save();
-
-    res.status(201).json({
-      message: 'User registered successfully',
-      user,
-      accessToken,
-      refreshToken
-    });
   } catch (error) {
-    if (error.name === 'ValidationError') {
-      const errors = Object.values(error.errors).map(err => err.message);
-      return res.status(400).json({ message: 'Validation error', errors });
-    }
-    res.status(500).json({ message: 'Server error during registration' });
+    console.error('Error initializing admin user:', error);
   }
-});
+};
 
-// Login
+// Initialize admin on server start
+initializeAdmin();
+
+// Login (Admin only)
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Find user
+    // Check if it's the admin email
+    if (email !== process.env.ADMIN_EMAIL) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
+
+    // Find admin user
     const user = await User.findOne({ email });
     if (!user || !user.isActive) {
       return res.status(401).json({ message: 'Invalid credentials' });
@@ -77,8 +67,9 @@ router.post('/login', async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: 'Server error during login' });
   }
-});/
-/ Refresh Token
+});
+
+// Refresh Token
 router.post('/refresh', async (req, res) => {
   try {
     const { refreshToken } = req.body;
